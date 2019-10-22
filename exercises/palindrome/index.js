@@ -8,9 +8,13 @@
 //   palindrome("abcdefg") === false
 
 function palindrome(str) {
-    return str.split('').every((char, index) => {
-        return char === str[str.length - index - 1];
-    }); // has a problem of doing last half comparision twice
+    const spl = str.split('');
+    for (let i = 0; i < spl.length/2 + 1; i++) {
+        if(spl[i] !== spl[spl.length - i - 1]) {
+            return false;
+        }
+    }
+    return true;
 }
 
 module.exports = palindrome;
