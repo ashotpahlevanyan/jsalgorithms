@@ -9,6 +9,29 @@
 // chunk([1, 2, 3, 4, 5], 10) --> [[ 1, 2, 3, 4, 5]]
 
 function chunk(array, size) {
+    const count = Math.ceil(array.length / size);
+    let res = [];
+    for(let i = 0; i < count; i++) {
+        res.push(array.slice(i * size, (i+1)*size ));
+    }
+    return res;
+}
+
+module.exports = chunk;
+
+/*
+* function chunk(array, size) {
+    const count = Math.ceil(array.length / size);
+    let res = [];
+    for(let i = 0; i < count; i++) {
+        res.push(array.slice(i * size, (i+1)*size ));
+    }
+    return res;
+}
+* */
+
+/*
+* function chunk(array, size) {
     const chunked = [];
 
     for(let element of array) {
@@ -23,5 +46,4 @@ function chunk(array, size) {
 
     return chunked;
 }
-
-module.exports = chunk;
+* */
