@@ -12,8 +12,7 @@ function chunk(array, size) {
     const count = Math.ceil(array.length / size);
     let res = [];
     for(let i = 0; i < count; i++) {
-        const middle = array.slice(i * size, (i+1)*size );
-        res = [...res, [...middle]];
+        res.push(array.slice(i * size, (i+1)*size ));
     }
     return res;
 }
