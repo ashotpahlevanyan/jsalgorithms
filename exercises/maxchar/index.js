@@ -9,11 +9,7 @@ let string = "Hello There!";
 const chars = {};
 
 for(let char of string) {
-    if(!chars[char]) {
-        chars[char] = 1;
-    } else {
-        chars[char] += 1;
-    }
+    chars[char] = chars[char] + 1 || 1;
 }
 
 function maxChar(str) {
